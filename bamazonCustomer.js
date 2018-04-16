@@ -20,11 +20,13 @@ connection.connect(function (err) {
     if (err) throw err;
     // console.log("connected!");
     // run the start function after the connection is made to prompt the user
-    ask();
+    start();
+    
 });
 
 //function which uses inquirer to ask the user what they would like to buy
 function ask() {
+    
     inquirer
         .prompt([
             {
@@ -96,6 +98,7 @@ function start() {
             console.log(res[i].item_id + ") " + res[i].product_name + " — $" + res[i].price)
         }
         console.log("-----------------------------------");
+        ask();
     });
 }
 
@@ -106,7 +109,7 @@ function updateInventory() {
         "UPDATE products SET ? WHERE ?",
         [
           {
-            quantity: remainingQuantity
+            stock_quantity: remainingQuantity
           },
           {
             item_id: chosenID
