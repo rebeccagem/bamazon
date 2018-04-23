@@ -59,6 +59,7 @@ function checkInventory() {
             console.log("-----------------------------------");
             console.log("Sorry, we are out of stock right now. Please choose a different product.")
             console.log("-----------------------------------");
+            ask();
         }
 
         //check to see if there is partial inventory for the customer order
